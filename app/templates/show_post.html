@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+
+
+{%block title%}
+{{post.title|safe}}
+{%endblock title%}
+
+
+{%block content%}
+</script>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                    <article class="article the-font" style="display:">
+                            <h3 style="color:#34495E">
+                                {{post.title|safe}}
+                            </h3>
+                        <p>
+                            <small>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true">
+                                </span>
+                                <span style="color:#8C8C8C;">
+                                    {{post.inserttime|safe}}
+                                </span>
+                            </small>
+                        </p>
+                        <div class="wrap">
+                        {{post.context|safe}}
+                        </div>
+                    </article>
+
+                </div>
+                <div class="col-md-4 collapse navbar-collapse"">
+                    <div class="share mrl the-font" style="background-color:#FFF;box-shadow:5px 5px 20px #CCC;width:260px;">
+                        <div style="padding:10px;">
+                            <div style="border-bottom:1px solid #DAD4D4;;padding:10px 10px;">
+                                <h6>
+                                    <span class="glyphicon glyphicon-leaf" aria-hidden="true">
+                                    </span>
+                                    热门文章
+                                </h6>
+                            </div>
+                            <ul>
+
+                                {%for _post in Post.query.order_by(Post.viewtimes.desc()).limit(20).all()%}
+                                    <li class="presentation" style="padding-top:0px;">
+                                        <a href="/p/{{_post.pid}}">
+                                            <p>
+                                                <span style="font-size:15px;">
+                                                    {{_post.title|safe}}
+                                                </span>
+                                                <span class="badge text-right" style="float:right">
+                                                    {{_post.viewtimes}}
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                {%endfor%}
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{%endblock content%}

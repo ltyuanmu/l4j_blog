@@ -1,0 +1,31 @@
+{%extends 'admin/base.html'%}
+
+{%block content%}
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+ <script src="//cdn.ckeditor.com/4.4.6/standard/ckeditor.js"></script>
+
+    <h4 class="header green clearfix">
+        <form class="form form-horizontal" method="post" action="">
+            <div class="form-group">
+            <input type="text" class="form-control" name="title" id="title"  placeholder="标题" {%if post%}value="{{post.title}}"{%endif%}>
+            </div>
+
+            <div class="form-group">
+            <textarea name="editor1" id="editor1" class="ckeditor" rows="100" cols="80">
+            {%if post%}value="{{post.context}}"{%endif%}
+            </textarea>
+            </div>
+
+            <div class="form-group">
+            <button class="btn btn-primary" id="add_post" type="submit">提交</button>
+            </div>
+        </form>
+    </h4>
+
+<script type="text/javascript">
+
+</script>
+    <!-- PAGE CONTENT ENDS -->
+</div><!-- /.col -->
+ {%endblock content%}

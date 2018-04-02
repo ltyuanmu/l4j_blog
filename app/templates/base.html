@@ -1,0 +1,147 @@
+<html>
+
+    <head>
+        <title>
+            {%block title%}首页{%endblock title%} - l4j.us 我们都是老司机
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+        <!--<link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css">-->
+        <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css">
+        <link rel="shortcut icon" href="/static/image/favicon.ico" />
+        <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.gzmiwu.com/wnflb/common.js?l8t" ></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="baidu-site-verification" content="SIVSS6olVz" />
+        <style type="text/css">
+            .wrap {
+              word-break: break-all;
+              word-wrap: break-word;
+            }
+            img {
+                  display: block;
+                  max-width: 100%;
+                  height: auto;
+            }
+        </style>
+
+        <script type="text/javascript">
+            $SCRIPT_ROOT = "";
+        </script>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-Amethyst" role="navigation" style="margin:10px 0px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/">
+                        <img src="/static/image/logo.png" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                    <ul class="nav navbar-nav">
+                        <li>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <font color=black size=7>
+                                    <b>
+                                        l4j
+                                    </b>
+                                    .us
+                                </font>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="signin_icon">
+                        {%if current_user.is_authenticated%}
+                            <a title="BookMark" style="cursor: pointer;" href="/admin">
+                                管理
+                            </a>
+                        {%else%}
+                            <a title="BookMark" style="cursor: pointer;" href="/auth/login">
+                                登录
+                            </a>
+                        {%endif%}
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- /navbar -->
+
+        {%block content%}
+        {%endblock content%}
+
+
+
+        <script type="text/javascript" src="/static/js/mystyle.js">
+        </script>
+        <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous">
+        </script>
+        <div style="display:none">
+            <script>
+                var x = document.getElementsByTagName("IMG");
+                var i;
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].getAttributeNode("data-actualsrc") !== null) {
+                        var rid = Math.random();
+                        var imgid = 'simg' + rid;
+                        var frameid = 'frameimg' + rid;
+                        x[i].id = imgid;
+                        var url = x[i].getAttributeNode("data-actualsrc").value.replace("https", "http");
+                        window['img' + imgid] = '<img id="img" src=\'' + url + '\' /><script>window.onload = function() { parent.document.getElementById(\'' + imgid + '\').src = document.getElementById(\'img\').src; parent.document.getElementById(\'' + frameid + '\').height = document.getElementById(\'img\').height+\'px\';parent.document.getElementById(\'' + imgid + '\').height=document.getElementById(\'img\').height+\'px\';        }<' + '/script>';
+                        document.write('<iframe id="' + frameid + '" src="javascript:parent[\'img' + imgid + '\'];" frameBorder="0" scrolling="no" width="100%"></iframe>');
+                        var y = document.getElementById(frameid);
+                        // x[i].parentNode.insertBefore(y,x[i]);
+                    }
+                }
+            </script>
+        </div>
+        <div style="background:#384452 none repeat scroll 0% 0%;color:#BFC9D3">
+            <div class="container">
+                <div class="row" style="padding-top:30px;">
+                    <div class="col-md-7">
+                        <div>
+                            <h5 style="margin-bottom:15px;margin-left:18px;">
+                                <strong>
+                                    CONTACT ME
+                                </strong>
+                            </h5>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class=" glyphicon glyphicon-send" aria-hidden="true">
+                                        </span>
+                                        &nbsp EMAIL:
+                                        <strong>
+                                            video4sexroot@gmail.com
+                                        </strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <p>
+                            <small>
+                                © COPYRIGHT BY l4j.us 2017
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

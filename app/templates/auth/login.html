@@ -1,0 +1,20 @@
+{% extends 'base_account.html' %}
+{% block content %}
+{% import "bootstrap/wtf.html" as wtf %}
+    <div class="container">
+
+        <h2 class="form-signin-heading text-center">登录</h2>
+
+        <div class="card card-signin">
+            <img class="img-circle profile-img" src="{{url_for('static',filename='image/avatar.png')}}" alt="">
+            {{ wtf.quick_form(form) }}
+        </div>
+
+        <p class="text-center">
+            <a href="/register">注册</a>
+            |
+            <a href="/">Home Page</a>
+        </p>
+
+    </div> <!-- /container -->
+{% endblock %}
